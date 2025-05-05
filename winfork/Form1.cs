@@ -11,6 +11,11 @@ namespace winfork
             InitializeComponent();
         }
 
+        private void newToolMenuStrip_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = string.Empty;
+        }
+
         private void saveToolMenuStrip_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog()
@@ -31,6 +36,11 @@ namespace winfork
 
                 MessageBox.Show($"saved to {filePath}");
             }
+        }
+
+        private void aboutToolMenuStrip_Click(object sender, EventArgs e) 
+        {
+            MessageBox.Show("winforks" + "\n" + "the worst code editor out there for Windows.");
         }
     }
 }

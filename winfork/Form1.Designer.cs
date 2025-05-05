@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-
-namespace winfork
+﻿namespace winfork
 {
     partial class Form1
     {
@@ -39,6 +35,9 @@ namespace winfork
             editToolStripMenuItem = new ToolStripMenuItem();
             viewToolStripMenuItem = new ToolStripMenuItem();
             helpToolStripMenuItem = new ToolStripMenuItem();
+            aboutToolStripMenuItem = new ToolStripMenuItem();
+            newToolStripMenuItem = new ToolStripMenuItem();
+            openToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -65,7 +64,7 @@ namespace winfork
             // 
             // fileToolStripMenuItem
             // 
-            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { saveToolStripMenuItem });
+            fileToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { newToolStripMenuItem, openToolStripMenuItem, saveToolStripMenuItem });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             fileToolStripMenuItem.Size = new Size(37, 20);
             fileToolStripMenuItem.Text = "File";
@@ -73,9 +72,9 @@ namespace winfork
             // saveToolStripMenuItem
             // 
             saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            saveToolStripMenuItem.Size = new Size(180, 22);
+            saveToolStripMenuItem.Size = new Size(103, 22);
             saveToolStripMenuItem.Text = "Save";
-            saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolMenuStrip_Click);
+            saveToolStripMenuItem.Click += saveToolMenuStrip_Click;
             // 
             // editToolStripMenuItem
             // 
@@ -91,9 +90,30 @@ namespace winfork
             // 
             // helpToolStripMenuItem
             // 
+            helpToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { aboutToolStripMenuItem });
             helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             helpToolStripMenuItem.Size = new Size(44, 20);
             helpToolStripMenuItem.Text = "Help";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            aboutToolStripMenuItem.Size = new Size(180, 22);
+            aboutToolStripMenuItem.Text = "About..."; 
+            aboutToolStripMenuItem.Click += this.aboutToolMenuStrip_Click;
+            // 
+            // newToolStripMenuItem
+            // 
+            newToolStripMenuItem.Name = "newToolStripMenuItem";
+            newToolStripMenuItem.Size = new Size(103, 22);
+            newToolStripMenuItem.Text = "New";
+            newToolStripMenuItem.Click += this.newToolMenuStrip_Click;
+            // 
+            // openToolStripMenuItem
+            // 
+            openToolStripMenuItem.Name = "openToolStripMenuItem";
+            openToolStripMenuItem.Size = new Size(103, 22);
+            openToolStripMenuItem.Text = "Open";
             // 
             // Form1
             // 
@@ -120,5 +140,8 @@ namespace winfork
         private ToolStripMenuItem viewToolStripMenuItem;
         private ToolStripMenuItem helpToolStripMenuItem;
         private ToolStripMenuItem saveToolStripMenuItem;
+        private ToolStripMenuItem newToolStripMenuItem;
+        private ToolStripMenuItem openToolStripMenuItem;
+        private ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
