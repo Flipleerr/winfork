@@ -38,9 +38,27 @@ namespace winfork
             }
         }
 
-        private void aboutToolMenuStrip_Click(object sender, EventArgs e) 
+        private void openToolMenuStrip_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("winforks" + "\n" + "the worst code editor out there for Windows.");
+            OpenFileDialog openFileDialog = new OpenFileDialog()
+            {
+                Filter = "Text (*.txt)|*.txt|All Files (*.*)|*.*",
+                Title = "Open"
+            };
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                string filePath = openFileDialog.FileName;
+
+                string contents = File.ReadAllText(filePath);
+
+                textBox1.Text = contents;
+            }
+        }
+
+        private void aboutToolMenuStrip_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("winfork" + "\n" + "the worst code editor out there for Windows.");
         }
     }
 }
