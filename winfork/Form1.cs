@@ -11,9 +11,17 @@ namespace winfork
             InitializeComponent();
         }
 
+        private void UpdateLineStatus(object sender, EventArgs e)
+        {
+            int index = richTextBox1.SelectionStart;
+            int line = richTextBox1.GetLineFromCharIndex(index) + 1;
+            int col = richTextBox1.GetFirstCharIndexOfCurrentLine() + 1;
+            lineStatus.Text = $"Ln {line}, Col {col}"
+        }
+
         private void newToolMenuStrip_Click(object sender, EventArgs e)
         {
-            textBox1.Text = string.Empty;
+            richTextBox1.Text = string.Empty;
         }
 
         private void saveToolMenuStrip_Click(object sender, EventArgs e)
@@ -30,7 +38,7 @@ namespace winfork
             {
                 string filePath = saveFileDialog.FileName;
 
-                string contents = textBox1.Text;
+                string contents = richTextBox1.Text;
 
                 System.IO.File.WriteAllText(filePath, contents);
 
@@ -52,13 +60,23 @@ namespace winfork
 
                 string contents = File.ReadAllText(filePath);
 
-                textBox1.Text = contents;
+                richTextBox1.Text = contents;
             }
         }
 
         private void aboutToolMenuStrip_Click(object sender, EventArgs e)
         {
             MessageBox.Show("winfork" + "\n" + "the worst code editor out there for Windows.");
+        }
+
+        private void getPluginsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("no Forktools backend found! please install Forktools from https://forktools.net first");
+        }
+
+        private void noneToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            throw new Exception("oops! winfork crashed! we don't know why, but our telemetry system logged everything so we're probably working on a fix.");
         }
     }
 }
