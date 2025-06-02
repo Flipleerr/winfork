@@ -28,7 +28,7 @@ namespace winfork
         private void Resize_TextBox(object sender, EventArgs e)
         {
             richTextBox1.Size = new Size(this.ClientSize.Width, this.ClientSize.Height - this.menuStrip1.Height);
-            richTextBox1.Location = new Point(0, this.menuStrip1.Height);
+            richTextBox1.Location = new Point(this.lineNumberPanel.Right, this.menuStrip1.Height);
         }
 
         private void RichTextBox_PositionChanged(object sender, EventArgs e)
@@ -119,6 +119,11 @@ namespace winfork
                 int y = startY + (i - firstline) * lineheight;
                 e.Graphics.DrawString((i + 1).ToString(), richTextBox1.Font, Brushes.Gray, new PointF(0, y));
             }
+        }
+
+        private void quitWinforkToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
