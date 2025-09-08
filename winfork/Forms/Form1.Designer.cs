@@ -139,31 +139,32 @@
             // cutToolStripMenuItem
             // 
             cutToolStripMenuItem.Name = "cutToolStripMenuItem";
-            cutToolStripMenuItem.Size = new Size(144, 22);
+            cutToolStripMenuItem.Size = new Size(180, 22);
             cutToolStripMenuItem.Text = "Cut";
             // 
             // copyToolStripMenuItem
             // 
             copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            copyToolStripMenuItem.Size = new Size(144, 22);
+            copyToolStripMenuItem.Size = new Size(180, 22);
             copyToolStripMenuItem.Text = "Copy";
             // 
             // pasteToolStripMenuItem
             // 
             pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            pasteToolStripMenuItem.Size = new Size(144, 22);
+            pasteToolStripMenuItem.Size = new Size(180, 22);
             pasteToolStripMenuItem.Text = "Paste";
             // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(141, 6);
+            toolStripSeparator2.Size = new Size(177, 6);
             // 
             // preferencesToolStripMenuItem
             // 
             preferencesToolStripMenuItem.Name = "preferencesToolStripMenuItem";
-            preferencesToolStripMenuItem.Size = new Size(144, 22);
+            preferencesToolStripMenuItem.Size = new Size(180, 22);
             preferencesToolStripMenuItem.Text = "Preferences...";
+            preferencesToolStripMenuItem.Click += preferencesToolStripMenuItem_Click;
             // 
             // viewToolStripMenuItem
             // 
@@ -182,7 +183,7 @@
             // 
             installedPluginsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { noneToolStripMenuItem });
             installedPluginsToolStripMenuItem.Name = "installedPluginsToolStripMenuItem";
-            installedPluginsToolStripMenuItem.Size = new Size(169, 22);
+            installedPluginsToolStripMenuItem.Size = new Size(180, 22);
             installedPluginsToolStripMenuItem.Text = "Installed Plugins...";
             // 
             // noneToolStripMenuItem
@@ -195,12 +196,12 @@
             // toolStripSeparator3
             // 
             toolStripSeparator3.Name = "toolStripSeparator3";
-            toolStripSeparator3.Size = new Size(166, 6);
+            toolStripSeparator3.Size = new Size(177, 6);
             // 
             // getPluginsToolStripMenuItem
             // 
             getPluginsToolStripMenuItem.Name = "getPluginsToolStripMenuItem";
-            getPluginsToolStripMenuItem.Size = new Size(169, 22);
+            getPluginsToolStripMenuItem.Size = new Size(180, 22);
             getPluginsToolStripMenuItem.Text = "Get Plugins...";
             getPluginsToolStripMenuItem.Click += getPluginsToolStripMenuItem_Click;
             // 
@@ -274,8 +275,10 @@
             lineNumberPanel.Font = new Font("Courier New", 9F, FontStyle.Regular, GraphicsUnit.Point);
             lineNumberPanel.Location = new Point(0, 24);
             lineNumberPanel.Name = "lineNumberPanel";
+            lineNumberPanel.Padding = new Padding(4);
             lineNumberPanel.Size = new Size(20, 486);
             lineNumberPanel.TabIndex = 4;
+            lineNumberPanel.Paint += lineNumberPanel_Paint_1;
             // 
             // vScrollBar1
             // 
