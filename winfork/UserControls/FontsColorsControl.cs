@@ -17,5 +17,10 @@ namespace winfork.UserControls
             InitializeComponent();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var FontsControl = new FontDialog();
+            FontsControl.ShowDialog();
+        }
     }
 }

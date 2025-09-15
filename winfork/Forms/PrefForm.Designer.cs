@@ -34,6 +34,8 @@
             TreeNode treeNode4 = new TreeNode("Appearance");
             treeView1 = new TreeView();
             panel1 = new Panel();
+            fontsColorsControl1 = new UserControls.FontsColorsControl();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // treeView1
@@ -55,10 +57,19 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(fontsColorsControl1);
             panel1.Location = new Point(173, 12);
             panel1.Name = "panel1";
             panel1.Size = new Size(390, 391);
             panel1.TabIndex = 1;
+            // 
+            // fontsColorsControl1
+            // 
+            fontsColorsControl1.Location = new Point(0, 0);
+            fontsColorsControl1.Name = "fontsColorsControl1";
+            fontsColorsControl1.Size = new Size(387, 391);
+            fontsColorsControl1.TabIndex = 0;
+            fontsColorsControl1.Load += fontsColorsControl1_Load;
             // 
             // PrefForm
             // 
@@ -70,6 +81,7 @@
             Name = "PrefForm";
             Text = "Preferences";
             Load += Form2_Load;
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -77,5 +89,6 @@
 
         private TreeView treeView1;
         private Panel panel1;
+        private UserControls.FontsColorsControl fontsColorsControl1;
     }
 }

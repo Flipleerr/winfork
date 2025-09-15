@@ -21,5 +21,10 @@ namespace winfork
         {
 
         }
+
+        private void fontsColorsControl1_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
