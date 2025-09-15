@@ -5,6 +5,7 @@ using System.Windows.Forms;
 
 namespace winfork
 {
+    // this entire class is super messy i'm sorry
     public partial class Form1 : Form
     {
         public Form1()

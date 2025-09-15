@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             menuStrip1 = new MenuStrip();
             fileToolStripMenuItem = new ToolStripMenuItem();
             newToolStripMenuItem = new ToolStripMenuItem();
@@ -55,11 +56,10 @@
             statusStrip1 = new StatusStrip();
             lineStatus = new ToolStripStatusLabel();
             toolStripStatusLabel3 = new ToolStripStatusLabel();
+            lineEndingStatusLabel = new ToolStripStatusLabel();
             toolStripStatusLabel2 = new ToolStripStatusLabel();
             richTextBox1 = new RichTextBox();
             lineNumberPanel = new Panel();
-            vScrollBar1 = new VScrollBar();
-            lineEndingStatusLabel = new ToolStripStatusLabel();
             menuStrip1.SuspendLayout();
             statusStrip1.SuspendLayout();
             SuspendLayout();
@@ -140,30 +140,30 @@
             // cutToolStripMenuItem
             // 
             cutToolStripMenuItem.Name = "cutToolStripMenuItem";
-            cutToolStripMenuItem.Size = new Size(144, 22);
+            cutToolStripMenuItem.Size = new Size(180, 22);
             cutToolStripMenuItem.Text = "Cut";
             // 
             // copyToolStripMenuItem
             // 
             copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            copyToolStripMenuItem.Size = new Size(144, 22);
+            copyToolStripMenuItem.Size = new Size(180, 22);
             copyToolStripMenuItem.Text = "Copy";
             // 
             // pasteToolStripMenuItem
             // 
             pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
-            pasteToolStripMenuItem.Size = new Size(144, 22);
+            pasteToolStripMenuItem.Size = new Size(180, 22);
             pasteToolStripMenuItem.Text = "Paste";
             // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(141, 6);
+            toolStripSeparator2.Size = new Size(177, 6);
             // 
             // preferencesToolStripMenuItem
             // 
             preferencesToolStripMenuItem.Name = "preferencesToolStripMenuItem";
-            preferencesToolStripMenuItem.Size = new Size(144, 22);
+            preferencesToolStripMenuItem.Size = new Size(180, 22);
             preferencesToolStripMenuItem.Text = "Preferences...";
             preferencesToolStripMenuItem.Click += preferencesToolStripMenuItem_Click;
             // 
@@ -184,7 +184,7 @@
             // 
             installedPluginsToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { noneToolStripMenuItem });
             installedPluginsToolStripMenuItem.Name = "installedPluginsToolStripMenuItem";
-            installedPluginsToolStripMenuItem.Size = new Size(169, 22);
+            installedPluginsToolStripMenuItem.Size = new Size(180, 22);
             installedPluginsToolStripMenuItem.Text = "Installed Plugins...";
             // 
             // noneToolStripMenuItem
@@ -197,12 +197,12 @@
             // toolStripSeparator3
             // 
             toolStripSeparator3.Name = "toolStripSeparator3";
-            toolStripSeparator3.Size = new Size(166, 6);
+            toolStripSeparator3.Size = new Size(177, 6);
             // 
             // getPluginsToolStripMenuItem
             // 
             getPluginsToolStripMenuItem.Name = "getPluginsToolStripMenuItem";
-            getPluginsToolStripMenuItem.Size = new Size(169, 22);
+            getPluginsToolStripMenuItem.Size = new Size(180, 22);
             getPluginsToolStripMenuItem.Text = "Get Plugins...";
             getPluginsToolStripMenuItem.Click += getPluginsToolStripMenuItem_Click;
             // 
@@ -222,7 +222,7 @@
             // aboutToolStripMenuItem
             // 
             aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            aboutToolStripMenuItem.Size = new Size(116, 22);
+            aboutToolStripMenuItem.Size = new Size(180, 22);
             aboutToolStripMenuItem.Text = "About...";
             aboutToolStripMenuItem.Click += aboutToolStripMenu_Click;
             // 
@@ -245,8 +245,14 @@
             // toolStripStatusLabel3
             // 
             toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            toolStripStatusLabel3.Size = new Size(641, 17);
+            toolStripStatusLabel3.Size = new Size(672, 17);
             toolStripStatusLabel3.Spring = true;
+            // 
+            // lineEndingStatusLabel
+            // 
+            lineEndingStatusLabel.Name = "lineEndingStatusLabel";
+            lineEndingStatusLabel.Size = new Size(19, 17);
+            lineEndingStatusLabel.Text = "LF";
             // 
             // toolStripStatusLabel2
             // 
@@ -281,30 +287,16 @@
             lineNumberPanel.TabIndex = 4;
             lineNumberPanel.Paint += lineNumberPanel_Paint_1;
             // 
-            // vScrollBar1
-            // 
-            vScrollBar1.Dock = DockStyle.Right;
-            vScrollBar1.Location = new Point(790, 24);
-            vScrollBar1.Name = "vScrollBar1";
-            vScrollBar1.Size = new Size(17, 486);
-            vScrollBar1.TabIndex = 5;
-            // 
-            // lineEndingStatusLabel
-            // 
-            lineEndingStatusLabel.Name = "lineEndingStatusLabel";
-            lineEndingStatusLabel.Size = new Size(19, 17);
-            lineEndingStatusLabel.Text = "LF";
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(807, 532);
-            Controls.Add(vScrollBar1);
             Controls.Add(lineNumberPanel);
             Controls.Add(statusStrip1);
             Controls.Add(menuStrip1);
             Controls.Add(richTextBox1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
             Name = "Form1";
             Text = "winfork";
@@ -344,7 +336,6 @@
         private RichTextBox richTextBox1;
         private ToolStripMenuItem preferencesToolStripMenuItem;
         private Panel lineNumberPanel;
-        private VScrollBar vScrollBar1;
         private ToolStripSeparator toolStripSeparator4;
         private ToolStripMenuItem quitWinforkToolStripMenuItem;
         private ToolStripMenuItem saveAsToolStripMenuItem;
