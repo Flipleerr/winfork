@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 
+using winfork.Helpers;
+
 namespace winfork
 {
     // this entire class is super messy i'm sorry
@@ -18,6 +20,9 @@ namespace winfork
             richTextBox1.TextChanged += richTextBox1_TextChanged;
             lineNumberPanel.Paint += lineNumberPanel_Paint;
             this.Text = "winfork - Untitled";
+
+            Preferences prefs = new Preferences();
+            prefs.Read();
         }
 
         private void UpdateLineStatus()
