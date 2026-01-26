@@ -1,0 +1,3 @@
+Did you know you can install plugins? Go to Plugins > Install Plugins to install a plugin you previously downloaded.
+Don't like how winfork looks? Change the text font and color in the Preferences menu!
+Is your computer performing poorly? winfork needs much of your system resources to perform well. Please make sure only winfork is open on your computer.

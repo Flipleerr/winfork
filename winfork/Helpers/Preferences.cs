@@ -1,20 +1,37 @@
-﻿using Tomlyn.Parsing;
+﻿using Tomlyn;
+using Tomlyn.Parsing;
 using winfork.Properties;
 
 namespace winfork.Helpers
 {
     public class Preferences
     {
+        p
+
         public void Read()
         {
             try
             {
-                string prefs = File.ReadAllText("settings.toml");
+                string prefData = File.ReadAllText("settings.toml");
+                var prefs = Toml.Parse(prefData);
+
+                if (prefs.HasErrors)
+                {
+                    foreach (var error in prefs.Diagnostics)
+                    {
+                        Console.WriteLine(error);
+                    }
+                }
             }
             catch 
             {
                 File.Create("settings.toml");
             }
+        }
+
+        public void Write()
+        {
+
         }
     }
 }

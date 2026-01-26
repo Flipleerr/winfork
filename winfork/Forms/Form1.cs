@@ -10,6 +10,8 @@ namespace winfork
     // this entire class is super messy i'm sorry
     public partial class Form1 : Form
     {
+        private List<string> tips = new List<string>();
+
         public Form1()
         {
             InitializeComponent();
@@ -20,6 +22,7 @@ namespace winfork
             richTextBox1.TextChanged += richTextBox1_TextChanged;
             lineNumberPanel.Paint += lineNumberPanel_Paint;
             this.Text = "winfork - Untitled";
+
 
             Preferences prefs = new Preferences();
             prefs.Read();
