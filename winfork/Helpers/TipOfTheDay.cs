@@ -5,22 +5,18 @@ namespace winfork.Helpers
 {
     public class TipOfTheDay
     {
-        List<string> tips = new List<string>();
-        Random random = new Random();
+        static List<string> tips = new List<string>();
+        static Random random = new Random();
 
-        public string PickTip()
+        public static string PickTip()
         {
             foreach (string line in File.ReadLines("tips.txt"))
             {
                 tips.Add(line);
             }
 
-            foreach (string tip in tips)
-            {
-                var index = random.Next(tip.Length);
-
-                var randomTip = tips[index];
-            }
+            var index = random.Next(tips.Count);
+            return tips[index];
         }
     }
 }

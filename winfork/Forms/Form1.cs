@@ -22,10 +22,15 @@ namespace winfork
             richTextBox1.TextChanged += richTextBox1_TextChanged;
             lineNumberPanel.Paint += lineNumberPanel_Paint;
             this.Text = "winfork - Untitled";
-
+            this.Shown += ShowTip;
 
             Preferences prefs = new Preferences();
             prefs.Read();
+        }
+
+        private void ShowTip(object sender, EventArgs e)
+        {
+            MessageBox.Show(TipOfTheDay.PickTip(), "Tip of the Day", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void UpdateLineStatus()

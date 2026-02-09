@@ -6,8 +6,6 @@ namespace winfork.Helpers
 {
     public class Preferences
     {
-        p
-
         public void Read()
         {
             try

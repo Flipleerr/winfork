@@ -35,4 +35,8 @@
     </None>
   </ItemGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="echo copying helpers&#xD;&#xA;copy $(ProjectDir)\Helpers\tips.txt $(TargetDir)\" />
+  </Target>
+
 </Project>
